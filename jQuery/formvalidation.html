@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Form Validation</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #wrapper{
+            width: 700px;
+            margin:0 auto;
+
+        }
+        body{
+            font-size: 180%;
+        }
+        input {
+            padding: 15px;
+            font-size: 25px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            width: 520px;
+        }
+
+        label{
+            display: inline-block;
+            width: 170px;
+        }
+
+        .form-group{
+            margin-bottom: 15px;
+        }
+
+        button{
+            background-color: green;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            margin-top:20px;
+            width: 100%;
+        }
+
+        #error{
+            color: red;
+            text-align: left;
+        }
+
+    </style>
+  </head>
+  <body>    
+
+    <div id="wrapper">
+        <div id="error"></div>
+       <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" placeholder="Please Enter your email">  
+       </div>
+
+       <div class="form-group">
+        <label for="phone">Telefon</label>
+        <input type="text" name="phone" id="phone" placeholder="Please Enter your phone">  
+       </div>
+
+      <div class="form-group">
+        <label for="password">Parola</label>
+        <input type="password" name="parola" id="password" placeholder="Please Enter your password">  
+      </div>
+      <div class="form-group">
+        <label for="repassword">Parola Tekrar</label>
+        <input type="text" name="email" id="repassword" placeholder="Please Enter your password">  
+      </div>
+
+       <button id="btn">Kaydet</button>
+
+    </div>
+
+    <script>
+
+        $(function(){
+            
+
+
+            function isEmail(email) {
+                var pattern =  /^([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)@([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)[\\.]([a-zA-Z]{2,9})$/;
+                return pattern.test(email);
+            }
+
+
+           $("#btn").click(function(){
+            var errormessage = "";
+            $("#error").html("");
+                
+            if($("#email").val()==""){
+                errormessage+="<p>email alanı zorunlu alandır</p>"
+            }
+
+            if(isEmail($("#email").val())==false){
+                errormessage+="<p>email alanı düzgün gir </p>";
+            }
+
+            if($.isNumeric($("#phone").val())==false){
+                errormessage+="<p>telefon alanı düzgün gir</p>"
+            }
+
+            
+            if($("#phone").val()==""){
+                errormessage+="<p>telefon alanı zorunlu alandır</p>"
+            }
+            if($("#password").val()==""){
+                errormessage+="<p>parola alanı zorunlu alandır</p>"
+            }
+            if($("#password").val()!=$("#repassword").val()){
+                errormessage+="<p>parola alanları aynı değil</p>"
+            }
+            
+            if(errormessage!=""){
+                $("#error").html(errormessage);
+            }
+
+           });
+        });
+
+
+    </script>
+  
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

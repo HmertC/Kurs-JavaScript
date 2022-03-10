@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <title>Methods</title>
+
+    <style>
+        .higlight {
+            background-color: yellow;
+            display: none;
+        }
+
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fenerbahçe Efsanesi</h1>
+
+    <ul>
+        <li>Alex De Souza</li>
+        <li>Can bartu</li>
+        <li>Volkan Demirel</li>
+    </ul>
+
+    <img src="https://w7.pngwing.com/pngs/111/827/png-transparent-alligator-crocodile-cartoon-alligator-s-for-kids-vertebrate-fauna-fictional-character-thumbnail.png" width="200" alt="">
+
+    <input type="text" id="ad" placeholder="Adınız">
+    <input type="text" id="soyad" class="green" placeholder="Soyad">
+    <button type="button"id="btnKaydet" onclick="adsoyad();">Kaydet</button>
+
+    <script>
+
+        console.log($("h1").text());
+
+        console.log($("ul li").text());
+
+        $("h1").text("Javascprit");
+
+        console.log($("input").val());
+
+        // $("input").val("Senin Aklında kimler var");
+
+        $("img").attr("width",  "400")
+
+        function adsoyad()
+        {
+            var ad =$("#ad").val();
+            var soyad =$("#soyad").val();
+
+            console.log("adınız ve soyadınız :"+ad + " "+ soyad);
+
+            $("#ad").toggleClass("higlight");
+            $("#soyad").removeClass("green");
+        }
+
+
+
+    </script>
+   
+</body>
+</html>

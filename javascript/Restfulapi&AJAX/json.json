@@ -1,0 +1,22 @@
+[
+
+{
+    "firstName" : "cabbar",
+    "lastName" : "Yılmaz",
+    "age" : 25,
+    "retired" : false
+},
+{
+    "firstName" : "rezzak",
+    "lastName" : "Hanzo",
+    "age" : 32,
+    "retired" : false
+},
+{
+    "firstName" : "Haydar",
+    "lastName" : "Haydari",
+    "age" : 69,
+    "retired" : true
+}
+
+]

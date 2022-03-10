@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <title> show hide methods</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+
+    <p>Damarımı aksan sarı lacivert akar</p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+
+<script>
+    $(document).ready(function(){
+        
+        $("#hide").click(function(){
+            $("p").hide(3000);
+        });
+
+        $("#show").click(function(){
+            $("p").show(1000,function() {
+                alert("paragraf gösterilirdi");
+            });
+        });
+
+        $("#toggle").click(function(){
+            $("p").toggle("slow");
+        });
+    });
+
+
+</script>
+
+</body>
+</html>

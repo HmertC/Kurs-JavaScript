@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <title>slide - fade</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+
+    <p>Bağırın ulan en büyük Fenerbahçe diye</p>
+
+    <button id="slideup">Slide Up</button>
+    <button id="slidedown">Slide Down</button>
+
+    <button id="toggle">Toggle</button>
+
+
+    <p id="2">Bağırın ulan en büyük Fenerbahçe diye</p>
+
+    <button id="fadein">FadeIn</button>
+    <button id="fadeout">FadeOut</button>
+    <button id="fadeto">FadeTo</button>
+
+    <button id="togglefd">Toggle</button>
+
+<script>
+
+$(document).ready(function(){
+        
+        $("#slideup").click(function(){
+            $("p").slideUp("slow");
+        });
+
+        $("#slidedown").click(function(){
+            $("p").slideDown(1000,function() {
+                alert("paragraf gösterilirdi");
+            });
+        });
+
+        $("#toggle").click(function(){
+            $("p").slideToggle("slow");
+        });
+
+
+
+        $("#fadein").click(function(){
+            $("#2").fadeIn("slow");
+        });
+
+        $("#fadeout").click(function(){
+            $("#2").fadeOut(1000,function() {
+                alert("paragraf gösterilirdi");
+            });
+        });
+
+        $("#togglefd").click(function(){
+            $("#2").fadeToggle("slow");
+        });
+
+        $("#fadeto").click(function(){
+            $("#2").fadeTo("slow",0.7);
+        });
+
+
+
+
+    });
+
+</script>
+
+</body>
+</html>
